@@ -1,65 +1,58 @@
-📧 Gmail Clone Application
-A Java Swing-based Gmail Clone that simulates core email functionalities including sending, reading, deleting, and updating messages. This application is designed with a simple, user-friendly graphical interface and uses a backend database to manage email records.
+# 🚀 Gmail Clone Application (Java Swing + MySQL)
 
-📌 Features
-✅ User Authentication
+A desktop-based Gmail-like application to send, receive, update, and delete emails with user account management.
 
-Login with username and password.
+---
 
-Create a new account.
+## 📦 Features
 
-✅ Send Emails
+* ✅ **User Authentication** — Login / Register
+* ✅ **Send Emails** — Compose & send messages
+* ✅ **View Inbox** — Check received messages
+* ✅ **Update Messages** — Edit drafts before sending
+* ✅ **Delete Messages** — Remove emails from inbox
+* ✅ **Graphical Interface** — Built with Java Swing
 
-Compose and send messages to other registered users.
+---
 
-✅ Inbox Management
+## ⚙️ Technologies Used
 
-View received messages.
+* Java SE (Swing for GUI)
+* MySQL Database
+* JDBC for database connectivity
+* NetBeans IDE (optional for GUI designing)
 
-Read full message details.
+---
 
-✅ Update Emails
+## 📂 Project Structure
 
-Update message content before final sending.
+| File                  | Description                       |
+| --------------------- | --------------------------------- |
+| LoginPage.java        | Login screen logic                |
+| CreateAccount.java    | Account creation page             |
+| MainPage1.java        | Dashboard after login             |
+| connection.java       | Database connection (JDBC)        |
+| IntershipProject.java | Project main entry point          |
+| \*.form Files         | GUI forms designed using NetBeans |
 
-✅ Delete Emails
+---
 
-Remove unwanted messages from inbox/sent items.
+## 💄 Database Schema
 
-✅ Simple GUI Interface
+**Database Name:** `gmail_clone`
 
-Built using Java Swing.
+**Users Table:**
 
-Form-based design using NetBeans IDE.
+```sql
+CREATE TABLE users (
+    username VARCHAR(50) PRIMARY KEY,
+    password VARCHAR(50)
+);
+```
 
-🛠️ Technologies Used
-Java SE (Core Java)
+**Emails Table:**
 
-Java Swing (for GUI)
-
-JDBC (Java Database Connectivity)
-
-MySQL (Database Backend)
-
-NetBeans IDE (Optional but recommended for form editing)
-
-📁 Project Structure
-File Name	Purpose
-LoginPage.java	Login window and authentication logic
-CreateAccount.java	New account registration window
-MainPage1.java	Main dashboard simulating Gmail interface
-connection.java	JDBC database connection handling
-IntershipProject.java	Main project entry point
-.form Files	GUI layout files (used by NetBeans GUI Designer)
-
-📊 Database Design
-Database Name: gmail_clone
-
-Suggested Table: emails
-
-sql
-Copy
-Edit
+```sql
 CREATE TABLE emails (
     id INT AUTO_INCREMENT PRIMARY KEY,
     sender VARCHAR(100),
@@ -68,72 +61,62 @@ CREATE TABLE emails (
     message TEXT,
     sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-Suggested Table: users
+```
 
-sql
-Copy
-Edit
-CREATE TABLE users (
-    username VARCHAR(50) PRIMARY KEY,
-    password VARCHAR(50)
-);
-⚙️ Setup Instructions
-1️⃣ Prerequisites
-Java JDK 8 or higher.
+---
 
-MySQL Server running.
+## 🛠️ Setup Instructions
 
-MySQL JDBC Driver added to project libraries.
+### 1️⃣ Prerequisites
 
-(Optional) NetBeans IDE for GUI form handling.
+* Java JDK 8+
+* MySQL Server
+* MySQL JDBC Driver
 
-2️⃣ Configuration
-In connection.java file:
+### 2️⃣ Configure database in `connection.java`:
 
-java
-Copy
-Edit
+```java
 String url = "jdbc:mysql://localhost:3306/gmail_clone";
 String user = "your_mysql_username";
 String pass = "your_mysql_password";
-Replace credentials as necessary.
+```
 
-3️⃣ Running the Application
-Compile all .java files:
+### 3️⃣ Compile:
 
-bash
-Copy
-Edit
+```bash
 javac *.java
-Run the main class:
+```
 
-bash
-Copy
-Edit
+### 4️⃣ Run:
+
+```bash
 java IntershipProject
-Use the GUI to log in, send emails, view inbox, update, or delete messages.
+```
 
-📷 Screenshots
-(Optional: Insert screenshots of login page, inbox view, and message composition screen.)
+---
 
-🚀 Future Improvements
-Add password hashing for secure storage.
+## 📷 Screenshots
 
-Implement email attachments.
+*(Optional section for GUI images if documenting in Markdown)*
 
-Search/filter functionality in inbox.
+---
 
-Pagination for large inboxes.
+## 🚧 Future Enhancements
 
-Responsive UI design improvements.
+* 🔐 Password hashing for secure storage
+* 📎 Email attachments
+* 🔍 Search & filtering
+* 📬 Pagination for inbox
+* 🌐 SMTP/POP3 integration
 
-Real SMTP/POP3 integration for actual email services.
+---
 
-⚡ Contribution
-Contributions and feature suggestions are welcome!
+## 👤 Author
 
-📄 License
-This project is for educational purposes only and is not associated with Google or Gmail.
-
-👤 Author
 Ritesh Ghadge
+
+---
+
+## 📃 License
+
+This project is built for educational use. No affiliation with Google or Gmail.
